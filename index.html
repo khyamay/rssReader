@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="A simple RSS Feed reader with angular.js and google feed api">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>RSS Feed Reader with Angular.js</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+    </head>
+    <body id="body">
+    	<div class="navbar navbar-fixed-top navbar-inverse">
+    		<div class="navbar-inner">
+    			<div class="container">
+    				<a href="#/" class="brand">RSS Feed Reader</a>
+    				<a href="#/manage/" class="btn  btn-warning pull-right"><i class="icon-wrench icon-white"></i>Manage</a>
+    			</div>	
+    		</div>
+    	</div>
+
+    	<div class="container-fluid">
+    		<div class="row-fluid">
+    			<div class="span3" ng-controller="FeedListCtrl">
+    				<ul class="nav nav-list">
+    					<li ng-repeat="feed in feeds">
+    						<a href="#/feed/{{feed.id}}">
+    							<img ng-src="http://g.etfv.co/{{feed.ur}}" width="16" width="16" />
+    							<span ng-bing-html-unsafe="feed.title"></span>
+    						</a>
+    					</li>
+    				</ul>
+    			</div>
+    			<div class="span9 ng-view" ng-animate="{enter: 'fade-enter'}"></div>
+    		</div>
+    	</div>
+
+        
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular-resouces.min.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/service/googleapis.feed.js"></script>
+<script src="scripts/service/LocalObjectStorage.js"></script>
+<script src="scripts/service/FeedList.js"></script>
+<script src="scripts/service/HashString.js"></script>
+<script src="scripts/filter/rssDate.js"></script>
+<script src="scripts/filter/hash.js"></script>
+<script src="scripts/controller/ItemsCrtl.js"></script>
+<script src="scripts/controller/ItemCrtl.js"></script>
+<script src="scripts/controller/FeedManageCrtl.js"></script>
+<script src="scripts/controller/FeedList.js"></script>
+
+    </body>
+</html>
