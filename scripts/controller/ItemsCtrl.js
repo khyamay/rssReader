@@ -1,4 +1,4 @@
-angular.module('RssFeed')
+angular.module('FeedReader')
 	.controller('ItemsCtrl', function($scope, $routeParams, Feedlist, FeedLoad){
 		var feed = Feedlist.getById($routeParams.id || Feedlist.getMinId());
 

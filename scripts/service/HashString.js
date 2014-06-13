@@ -1,4 +1,4 @@
-angular.module('RssFeed')
+angular.module('FeedReader')
 	.service('HashString', function(){
 		this.perform = function(str){
 			var hash = 0;

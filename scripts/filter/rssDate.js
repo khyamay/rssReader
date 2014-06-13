@@ -1,4 +1,4 @@
-angular.module('RssFeed')
+angular.module('FeedReader')
 	.filter('rssDate', function(){
 		return function(value){
 			return function (value){

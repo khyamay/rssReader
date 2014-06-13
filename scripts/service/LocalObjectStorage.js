@@ -1,5 +1,5 @@
 angular.module('LocalStorage', [])
-	.service('LocalStorage', function(){
+	.service('LocalObjectStorage', function(){
 		this.getObject = function(key){
 			return JSON.parse(localStorage.getItem(key))
 		};

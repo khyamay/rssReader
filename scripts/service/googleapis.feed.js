@@ -1,4 +1,4 @@
-angular.module('rssFeed', ['ngResource'])
+angular.module('FeedReader.FeedLoad', ['ngResource'])
 	.factory('FeedLoad', function($resource){
 		return $resource('http://ajax.googleapis.com/ajax/service/feed/load', {}, {
 			fetch: {
@@ -9,7 +9,7 @@ angular.module('rssFeed', ['ngResource'])
 	.factory('UrlLookup', function($resource){
 		return $resource('http://ajax.googleapis.com/ajax/services/feed/lookup', {}, {
 			fetch: {
-				method: 'JSNOP', params: { v: '1.0', callback: "JSON_CALLBACK"}
+				method: 'JSONP', params: { v: '1.0', callback: "JSON_CALLBACK"}
 			}
 		});
 	});

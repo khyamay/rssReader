@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="RssFeed">
+<html ng-app="FeedReader">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="A simple RSS Feed reader with angular.js and google feed api">
@@ -24,7 +24,7 @@
     				<ul class="nav nav-list">
     					<li ng-repeat="feed in feeds">
     						<a href="#/feed/{{feed.id}}">
-    							<img ng-src="http://g.etfv.co/{{feed.ur}}" width="16" width="16" />
+    							<img ng-src="http://g.etfv.co/{{feed.url}}" width="16" width="16" />
     							<span ng-bing-html-unsafe="feed.title"></span>
     						</a>
     					</li>

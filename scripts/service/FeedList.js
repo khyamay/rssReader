@@ -1,5 +1,5 @@
-angular.module('RssFeed', ['LocalObjectStorage'])
-	.service('FeedList', function($rootScope, LocalObjectStorage){
+angular.module('FeedReader.FeedList', ['LocalStorage'])
+	.service('FeedList', function ($rootScope, LocalObjectStorage){
 		this.add = function(url, title){
 			var list = this.get();
 			var id = localStorage.getItem('FeedListId') ? localStorage.getItem('FeedListId') : 1;

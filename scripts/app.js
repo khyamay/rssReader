@@ -1,5 +1,5 @@
-angular.module('FeedReader', ['RssFeed', 'rssFeed'])
-	.config(function($routeProvider){
+angular.module('FeedReader', ['FeedReader.FeedList', 'FeedReader.FeedLoad'])
+	.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/list.html',
@@ -9,7 +9,7 @@ angular.module('FeedReader', ['RssFeed', 'rssFeed'])
 				templateUrl: 'views/list.html',
 				controller: 'ItemCtrl'
 			})
-			.when('/feed/:id/item/:hasKey',{
+			.when('/feed/:id/item/:hashKey',{
 				templateUrl: 'views/item.html',
 				controller: 'ItemCtrl'
 			})
