@@ -6,7 +6,7 @@ angular.module('rssFeed', ['ngResource'])
 			}
 		});
 	})
-	.factory('URLLookup', function($resource){
+	.factory('UrlLookup', function($resource){
 		return $resource('http://ajax.googleapis.com/ajax/services/feed/lookup', {}, {
 			fetch: {
 				method: 'JSNOP', params: { v: '1.0', callback: "JSON_CALLBACK"}
