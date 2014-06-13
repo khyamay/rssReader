@@ -15,7 +15,7 @@ angular.module('FeedReader')
 				}
 
 				$scope.feed = data.responseData.feed.title;
-				FeedLoad.fetch({q: data.responseData.url}, {}, funciton(data){
+				FeedLoad.fetch({q: data.responseData.url}, {}, function(data){
 					if (data.responseStatus != 200){
 						return;
 					}
@@ -29,7 +29,7 @@ angular.module('FeedReader')
 			FeedList.delete(id);
 		};
 
-		$scope.$on('FeedList', funciton(event, data){
+		$scope.$on('FeedList', function(event, data){
 			$scope.feeds = data;
 		});
 

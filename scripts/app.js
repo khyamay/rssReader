@@ -9,7 +9,7 @@ angular.module('FeedReader', ['RssFeed', 'rssFeed'])
 				templateUrl: 'views/list.html',
 				controller: 'ItemCtrl'
 			})
-			.whhen('/feed/:id/item/:hasKey'{
+			.when('/feed/:id/item/:hasKey',{
 				templateUrl: 'views/item.html',
 				controller: 'ItemCtrl'
 			})
