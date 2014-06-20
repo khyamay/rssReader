@@ -25,7 +25,7 @@
     					<li ng-repeat="feed in feeds">
     						<a href="#/feed/{{feed.id}}">
     							<img ng-src="http://g.etfv.co/{{feed.url}}" width="16" width="16" />
-    							<span ng-bing-html-unsafe="feed.title"></span>
+    							<span ng-bind-html-unsafe="feed.title"></span>
     						</a>
     					</li>
     				</ul>
