@@ -1,13 +1,13 @@
-angular.module('FeedReader', ['FeedReader.FeedList', 'FeedReader.FeedLoad'])
+angular.module('FeedReader', ['FeedList', 'GoogleFeed'])
 	.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/list.html',
-				controller: 'ItemCtrl'
+				controller: 'ItemsCtrl'
 			})
 			.when('/feed/:id', {
 				templateUrl: 'views/list.html',
-				controller: 'ItemCtrl'
+				controller: 'ItemsCtrl'
 			})
 			.when('/feed/:id/item/:hashKey',{
 				templateUrl: 'views/item.html',
@@ -21,4 +21,5 @@ angular.module('FeedReader', ['FeedReader.FeedList', 'FeedReader.FeedLoad'])
 				templateUrl: 'views/manage/add.html',
 				controller: 'FeedManage',
 			})
+			.otherwise({redirectTo: '/'});
 	});

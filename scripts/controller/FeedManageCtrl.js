@@ -1,5 +1,5 @@
 angular.module('FeedReader')
-	.controller('FeedManage', function($scope, $location, UrlLookup, FeedList){
+	.controller('FeedManage', function ($scope, $location, UrlLookup, FeedLoad, FeedList){
 		$scope.feeds = FeedList.get();
 
 		$scope.add = function(){
@@ -8,14 +8,14 @@ angular.module('FeedReader')
 		};
 
 		$scope.lookup = function(){
-			UrlLookup.fetch({q: $scope.lookup.url}, {}, function(data){
+			UrlLookup.fetch({q: $scope.lookup.url}, {}, function (data){
 				if (data.responseStatus != 200 || (data.responseData && data.responseData.url == '')){
 					alert(data.responseDetails || 'Feed not found!');
 					return;
 				}
 
 				$scope.feed = data.responseData.feed.title;
-				FeedLoad.fetch({q: data.responseData.url}, {}, function(data){
+				FeedLoad.fetch({q: data.responseData.url}, {}, function (data){
 					if (data.responseStatus != 200){
 						return;
 					}
@@ -25,11 +25,11 @@ angular.module('FeedReader')
 			});
 		};
 
-		$scope.delete = function(id){
+		$scope.delete = function (id){
 			FeedList.delete(id);
 		};
 
-		$scope.$on('FeedList', function(event, data){
+		$scope.$on('FeedList', function (event, data){
 			$scope.feeds = data;
 		});
 

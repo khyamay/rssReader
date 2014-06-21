@@ -1,4 +1,4 @@
-angular.module('FeedReader.FeedList', ['LocalStorage'])
+angular.module('FeedList', ['LocalStorage'])
 	.service('FeedList', function ($rootScope, LocalObjectStorage){
 		this.add = function(url, title){
 			var list = this.get();
@@ -62,5 +62,5 @@ angular.module('FeedReader.FeedList', ['LocalStorage'])
 				minId = Math.min(minId, list[i].id);
 			}
 			return minId;
-		}
+		};
 	});

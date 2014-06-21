@@ -1,5 +1,5 @@
 angular.module('FeedReader')
-	.service('HashString', function(){
+	.service('HashString', function (){
 		this.perform = function(str){
 			var hash = 0;
 			if (str.length == 0) {
