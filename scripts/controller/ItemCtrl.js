@@ -8,7 +8,7 @@ angular.module('FeedReader')
 				var entries = data.responseData.feed.entries;
 
 				for (var i = entries.length - 1; i >= 0; i--){
-					if (HashString.perform(entries[i].title) == $routeParams.hashkey){
+					if (HashString.perform(entries[i].title) == $routeParams.hashKey){
 						$scope.item = entries[i];
 					}
 				}

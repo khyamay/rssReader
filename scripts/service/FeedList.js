@@ -45,7 +45,7 @@ angular.module('FeedList', ['LocalStorage'])
 		this.getById = function(id){
 			var list = this.get();
 
-			for (var i = list.length- 1; i>=0; i-- ){
+			for (var i = list.length- 1; i >= 0; i--){
 				if (list[i].id == id){
 					return list[i];
 				}
@@ -58,7 +58,7 @@ angular.module('FeedList', ['LocalStorage'])
 			var list = this.get();
 			var minId = Number.MAX_VALUE;
 
-			for (var i = list.length- 1; i >= 0; i--){
+			for (var i = list.length - 1; i >= 0; i--){
 				minId = Math.min(minId, list[i].id);
 			}
 			return minId;

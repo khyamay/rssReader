@@ -14,7 +14,7 @@ angular.module('FeedReader')
 					return;
 				}
 
-				$scope.feed = data.responseData.feed.title;
+				$scope.feed = data.responseData;
 				FeedLoad.fetch({q: data.responseData.url}, {}, function (data){
 					if (data.responseStatus != 200){
 						return;

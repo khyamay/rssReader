@@ -8,7 +8,7 @@ angular.module('FeedReader')
 
 			for (var i = str.length - 1; i >= 0; i--){
 				char = str.charCodeAt(i);
-				hash = ((hash<<5)- hash)+ char;
+				hash = ((hash<<5)-hash)+char;
 				hash = hash & hash;
 			}
 
